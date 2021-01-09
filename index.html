@@ -157,4 +157,15 @@ function login(){
 function go(){
   console.log('Not done yet.')
 }
+
+function generate(){
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 15; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+   document.getElementById('key').value = text
+   document.getElementsByName('yourkey')[0].value = text
+  return text;
+}	
 </script>
