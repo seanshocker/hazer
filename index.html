@@ -3,6 +3,7 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The #1 ROBLOX Plugin">
 <title> Login | Forum </title>
 <style> 
 
@@ -124,16 +125,18 @@ body {
 
 </style> 
 </head>  
-<body>  
-   <center><h1 style="color:white;"><p><b>Login<em>duck.</em></b></p></h1></center>
+<body background="https://rblx-account-api.000webhostapp.com/parts.png">  
+   <center><h1 style="color:white;"><p><b>Login</b></p></h1></center>
    
     <form>
         <center><div class="container"> 
             <center><input id="text_id" name="yourkey" readOnly = true placeholder="Key" value=""></center>
             <input type="text" placeholder="Enter Key" name="info" required>
-            <center><button class="button" onclick="login()">Unlock</button></center>
-           <center><br><button class="button" type="button" onclick="generate()">Generate Key</button></center>
-        </div> </center>
+            <center><button class="button" onclick="login()">Login</button></center>
+           <center><br><button class="admin" type="button" onclick="generate()">Generate Key</button></center>
+        </div> </center></form>
+        <script type="text/javascript" src="lol.js"></script>
+</body>
 
 <p id="key"></p>
 
@@ -141,14 +144,20 @@ body {
 
 <script>
 function login(){
-    var data = document.getElementsByName('info')[0].value
-    var key = document.getElementById('key').value
-    if (data == ""){
-        console.log('Failed to enter something.');
+  var data = document.getElementsByName('info')[0].value
+  var key = document.getElementById('key').value
+  if (data == ""){
+      alert('Please type something.')
+      event.preventDefault()
     }else{
-        if(data == key){
-             go();
-        }}
+      if(data == key){
+        console.log('Correct key!')
+        window.location.replace('./home.html')
+        event.preventDefault()
+      }else{ // this happens if they dont even put the right key cuz they are idiot
+        alert('Please provide the key that was generated.')
+        event.preventDefault()
+      }}
 }
 
 function go(){
