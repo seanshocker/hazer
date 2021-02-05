@@ -1,0 +1,74 @@
+input[type=text], select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 24%;
+    height: 24%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #0442ec;
+  }
+
+  .button1 {
+    position: relative;
+    background-color: #0044ff;
+    border: none;
+    font-size: 17px;
+    color: #FFFFFF;
+    padding: 8px;
+    width: 175px;
+    text-align: center;
+    transition-duration: 0.04s;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .button1:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .button1:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+  .button1:hover {opacity: 0.7}
+  .button1 {border-radius: 5px;}
+
+  .container { 
+    padding: 25px; 
+    background-color: #141414;
+    border: 8px;
+    border-radius:8px;
+    border:1px solid #f5f5f5;
+    width: 15%; 
+}
