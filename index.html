@@ -14,13 +14,13 @@
       <p><b style="font-family: Arial; color:white;">Login</b></p>
     </h1>
   </center>
-    <div class="container">
+    <center><div class="container">
       <input id="text_id" name="yourkey" readOnly=true placeholder="Key" value="">
       <input type="text" placeholder="Enter Key" id="info" required>
       <button style="vertical-align:middle" class="button1" onclick="login()"><span>Login </span></button>
       <br><br><button class="button1" onclick="generate()"><span>Generate </span></button>
       <br><br><text style="font-family: Arial; color:white;">Please login.</text>
-    </div>
+    </div></center>
 </body>
 
 <p id="key"></p>
@@ -71,7 +71,7 @@
     document.getElementsByName('yourkey')[0].value = text
     return text;
   }
-  
+
   if (sessionStorage.getItem('hazeSession')) { // lol
     window.location.href = "./proxy.html";
   } else {
