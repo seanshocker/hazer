@@ -4,7 +4,6 @@
 <head>
   <link rel="icon" href="./icon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The #1 ROBLOX Plugin">
   <link rel="stylesheet" href="css/styles.css">
   <title>Hazer</title>
 </head>
@@ -15,16 +14,67 @@
       <p><b style="font-family: Arial; color:white;">Login</b></p>
     </h1>
   </center>
-  <center>
     <div class="container">
-      <center><input id="text_id" name="yourkey" readOnly=true placeholder="Key" value=""></center>
+      <input id="text_id" name="yourkey" readOnly=true placeholder="Key" value="">
       <input type="text" placeholder="Enter Key" id="info" required>
-      <center><button style="vertical-align:middle" class="button1" onclick="login()"><span>Login </span></button></center>
-      <center><br><button class="button1" onclick="generate()"><span>Generate </span></button></center>
-      <center><br><text style="font-family: Arial; color:white;">Thanks for using Hazer!</text></center>
+      <button style="vertical-align:middle" class="button1" onclick="login()"><span>Login </span></button>
+      <br><br><button class="button1" onclick="generate()"><span>Generate </span></button>
+      <br><br><text style="font-family: Arial; color:white;">Please login.</text>
     </div>
-  </center>
-  <script type="text/javascript" src="js/functions.js"></script>
 </body>
 
 <p id="key"></p>
+
+<script>
+  if (sessionStorage.getItem('hazeSession')) { // lol
+    console.log('Ready to go!')
+    window.location.href = "./proxy.html";
+  }
+
+  function login() {
+    var data = document.getElementById('info')
+    var key = document.getElementById('key')
+    if (data.value == "") {
+      setTimeout(function () {
+        document.getElementById('info').readOnly = false;
+        document.getElementById('info').value = "";
+      }, 2000);
+      document.getElementById('info').readOnly = true;
+      document.getElementById('info').value = "Please type the key!";
+      document.getElementsByName('yourkey')[0].value = "";
+    } else {
+      if (data.value == key.value) {
+        console.log('Correct key!')
+        event.preventDefault()
+        sessionStorage.setItem('hazeSession', 'true')
+        window.location.href = "./proxy.html";
+      } else { // this happens if they dont even put the right key cuz they are idiot
+        setTimeout(function () {
+          document.getElementById('info').readOnly = false;
+          document.getElementById('info').value = "";
+        }, 2000);
+        document.getElementById('info').readOnly = true;
+        document.getElementById('info').value = "Thats the wrong key!";
+        document.getElementsByName('yourkey')[0].value = "";
+        event.preventDefault()
+      }
+    }
+  }
+
+  function generate() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 15; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    document.getElementById('key').value = text
+    document.getElementsByName('yourkey')[0].value = text
+    return text;
+  }
+  
+  if (sessionStorage.getItem('hazeSession')) { // lol
+    window.location.href = "./proxy.html";
+  } else {
+    console.log('Welcome.')
+  }
+</script>
