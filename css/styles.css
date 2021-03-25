@@ -1,3 +1,7 @@
+#filetype {
+  display: none;
+}
+
 input[type=text], select {
     width: 90%;
     padding: 12px 20px;

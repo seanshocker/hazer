@@ -28,7 +28,7 @@
 <script>
   if (sessionStorage.getItem('hazeSession')) { // lol
     console.log('Ready to go!')
-    window.location.href = "./proxy.html";
+    window.location.href = "./home.html";
   }
 
   function login() {
@@ -47,7 +47,7 @@
         console.log('Correct key!')
         event.preventDefault()
         sessionStorage.setItem('hazeSession', 'true')
-        window.location.href = "./proxy.html";
+        window.location.href = "./home.html";
       } else { // this happens if they dont even put the right key cuz they are idiot
         setTimeout(function () {
           document.getElementById('info').readOnly = false;
