@@ -5,15 +5,40 @@
     <meta name="description" content="Monster#1000">
     <meta name="keywords" content="izz">
     <style></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        textarea {
+            resize: none;
+            height: 500px;
+            position: absolute;
+            top: 350px;
+            left: 37.2%;
+            background-color: rgb(255, 255, 255);
+            border-radius: 3px;
+        }
+    </style>
+
 </head>
 
-<!-- Free stealth forwarding at www.dynadot.com. $9.25 registrations, transfers, renewals. -->
+<body style="background: rgb(20,20,20);text-align: center;">
+    <center>
+        <h1 style="color:white;">
+            <p><b style="font-family: Arial; color:white;">Home</b></p>
+        </h1>
+    </center>
+    <center>
+        <div class="container">
+            <input type="text" placeholder="Enter ID" id="id" required>
+            <button style="vertical-align:middle" class="button1" onclick="GET_TEST()"><span>GET </span></button>
+            <br><br><button class="button1" onclick=""><span>nil </span></button>
+        </div>
+    </center>
 
-<frameset rows="100%" border="0" framespacing="0" frameborder="0">
-    <frame name="main" src="https://velutinous-interact.000webhostapp.com/home.html" marginwidth="0" marginheight="0" scrolling="auto"
-        noresize="noresize">
-</frameset>
-<noframes></noframes>
+    <textarea cols="70" id="output" readOnly=true placeholder="Output" value="" wrap="off"></textarea>
+    <script type="text/javascript" src="./js/functions.js"></script>
+</body>
 
 </html>
 
