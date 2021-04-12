@@ -4,20 +4,21 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/styles.css">
-  
+
   <title>Hazer</title>
 </head>
 
 <body style="background-image: linear-gradient(to right, rgb(0, 68, 255), rgb(3, 109, 231));text-align: center;">
-  <center>
-    <br><br><br><br><br><br><br><br><br>
-    <div class="container">
-      <input type="text" id="text_id" name="yourkey" readOnly=true placeholder="Key" value="" required>
-      <input type="text" placeholder="Enter Key" id="info" required>
-      <br><br><button style="vertical-align:middle" class="button1" onclick="login()"><span>Login </span></button>
-      <br><br><button class="button1" onclick="generate()"><span>Generate </span></button>
-    </div>
-  </center>
+  <div id="navbar">
+    <p><b style="font-family: Arial; color:white;">Verify</b></p>
+  </div>
+  <br><br><br><br><br><br><br><br><br>
+  <div class="container">
+    <input type="text" id="text_id" name="yourkey" readOnly=true placeholder="Key" value="" required>
+    <input type="text" placeholder="Enter Key" id="info" required>
+    <br><br><button style="vertical-align:middle" class="button1" onclick="login()"><span>Verify </span></button>
+    <br><br><button class="button1" onclick="generate()"><span>Generate </span></button>
+  </div>
 </body>
 
 <p id="key"></p>
@@ -70,5 +71,20 @@
 
   if (sessionStorage.getItem('hazeSession')) { // lol
     window.location.href = "./home.html";
+  }
+
+  window.onscroll = function () { scroll() };
+
+
+  var navbar = document.getElementById("navbar");
+
+  var sticky = navbar.offsetTop;
+
+  function scroll() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
   }
 </script>
