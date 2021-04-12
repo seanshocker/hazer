@@ -1,14 +1,28 @@
-function GET_TEST() {
+function REQ_TEST() {
     var id = document.getElementById('id')
-    var output = document.getElementById('output')
+    if (id.value === "") {
+        setTimeout(function () {
+            id.readOnly = false;
+            id.value = "";
+        }, 2000);
+        id.readOnly = true;
+        id.value = "Failed!";
+    } else {
+        var output = document.getElementById('output')
 
-    const http = new XMLHttpRequest();
-    var url = `avatar.roblox.com/v1/users/${id.value}/avatar`;
-    
-    http.open("GET", url);
-    http.send();
+        const http = new XMLHttpRequest();
+        var url = `http://localhost:3000/?object=${id.value}`;
 
-    http.onreadystatechange=(e)=>{
-        output.value = http.responseText
+        http.open("POST", url);
+        http.send();
+
+        http.onreadystatechange = (e) => {
+            output.value = http.responseText
+        }
     }
+}
+
+function CLEAR_OUTPUT() {
+    var output = document.getElementById('output')
+    output.value = ""
 }
