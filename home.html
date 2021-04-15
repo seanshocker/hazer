@@ -4,7 +4,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/styles.css">
-
   <title>Hazer</title>
 </head>
 
@@ -14,8 +13,10 @@
   </div>
   <br><br><br><br><br><br><br><br><br>
   <div class="container">
-    <input type="text" placeholder="Input" id="info" required>
-    <br><br><button id="send-button" style="vertical-align:middle" class="button1"><span>Send </span></button>
+    <input type="text" placeholder="Javascript Code" id="info" required>
+    <br><br><button id="send-button" style="vertical-align:middle" onclick='run()' class="button1"><span>Run </span></button>
+    <script src="./js/functions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 <script>
